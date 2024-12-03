@@ -195,7 +195,15 @@ namespace BetterConsoles.Tables
                 }
                 else
                 {
-                    stringValues[i] = rowValues[i].ToString();
+                    if (rowValues[i] == null)
+                    {
+                        stringValues[i] = string.Empty;
+                    }
+                    else
+                    {
+                        stringValues[i] = rowValues[i].ToString();
+                    }
+
                 }            
             }
             return AddRow(stringValues);
